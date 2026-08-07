@@ -77,22 +77,6 @@
   }
   @media (max-width: 620px){ .margin-rule{ left: 30px; } }
 
-  .stamp{
-    position: absolute;
-    top: 34px;
-    right: 34px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10.5px;
-    letter-spacing: 0.08em;
-    color: var(--teal);
-    border: 1px solid var(--teal);
-    padding: 5px 9px;
-    transform: rotate(3deg);
-    border-radius: var(--radius);
-    opacity: 0.85;
-  }
-  @media (max-width: 620px){ .stamp{ display:none; } }
-
   /* ---------- HERO ---------- */
   .hero{
     padding: 64px 88px 44px 96px;
@@ -126,7 +110,7 @@
   .role-line .sep{ color: var(--ink-faint); margin: 0 8px; }
 
   .bio{
-    max-width: 56ch;
+    max-width: 60ch;
     color: var(--ink-soft);
     font-size: 15px;
     margin: 0 0 30px 0;
@@ -179,36 +163,13 @@
   .section:last-child{ border-bottom: none; }
   @media (max-width: 620px){ .section{ padding: 34px 26px 34px 56px; } }
 
-  .section-label{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin: 0 0 8px 0;
-  }
-
   .section h2{
     font-family: 'Merriweather', serif;
     font-weight: 700;
     font-size: 1.5rem;
-    margin: 0 0 6px 0;
+    margin: 0 0 26px 0;
     color: var(--ink);
   }
-  .section-sub{
-    font-style: italic;
-    color: var(--ink-faint);
-    font-size: 14px;
-    margin: 0 0 26px 0;
-    font-family: 'Merriweather', serif;
-  }
-
-  .profile-text{
-    color: var(--ink-soft);
-    max-width: 58ch;
-    font-size: 15px;
-  }
-  .profile-text strong{ color: var(--ink); font-weight: 600; }
 
   /* ---------- EDUCATION ---------- */
   .edu-entry{
@@ -282,14 +243,6 @@
     margin: 0;
     color: var(--ink);
   }
-  .build-tag{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10.5px;
-    color: var(--teal);
-    border: 1px solid var(--teal);
-    padding: 2px 7px;
-    border-radius: var(--radius);
-  }
   .build-entry p{
     font-size: 14px;
     color: var(--ink-soft);
@@ -330,10 +283,7 @@
 
 <div class="page">
   <div class="margin-rule"></div>
-  <div class="stamp">REV A · 2026</div>
-
   <header class="hero">
-    <p class="kicker">FIELD NOTES — ELECTRICAL ENGINEERING &amp; ANALYTICS</p>
     <h1 class="name">Neel Jain</h1>
     <p class="role-line">
       <b>Electrical Engineer</b>, Lam Research
@@ -341,9 +291,11 @@
       <b>MBA Candidate</b>, Purdue University
     </p>
     <p class="bio">
-      Electrical engineer with five years designing PCB assemblies, cable harnesses, and test instrumentation
-      for semiconductor capital equipment and avionics systems — from schematic capture through bring-up and test.
-      Currently pursuing an MBA to pair that hardware depth with business and analytics fluency.
+      I'm an Electrical engineer with 5 years of experience designing PCB assemblies, cable harnesses, and test
+      instrumentation for semiconductor capital equipment and avionics systems. I'm skilled in full system
+      electrical design and validation, from schematic capture through bring-up and test. I'm also studying for
+      my Master of Business Administration, expected May 2028! I'm passionate about all facets of electronic
+      design, from circuits to cables and everything surrounding them!
     </p>
     <div class="contact-row">
       <span class="email-chip">nj3054@gmail.com</span>
@@ -355,27 +307,17 @@
         LinkedIn
         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9L9 3M4 3h5v5"/></svg>
       </a>
+      <a class="btn ghost" href="https://github.com/neel-jain">
+        GitHub
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9L9 3M4 3h5v5"/></svg>
+      </a>
     </div>
   </header>
 
   <main class="body-sections">
 
-    <section class="section" id="profile">
-      <p class="section-label">Profile</p>
-      <h2>What I do</h2>
-      <p class="section-sub">Circuits to cables, and everything in between.</p>
-      <p class="profile-text">
-        I'm skilled in <strong>full-system electrical design and validation</strong> — schematic capture,
-        board layout, cable harness design, and hands-on test instrumentation for equipment that has to
-        work the first time. I'm passionate about every layer of electronic design, and I'm now building
-        the business and analytics side to match, with an MBA expected <strong>May 2028</strong>.
-      </p>
-    </section>
-
     <section class="section" id="education">
-      <p class="section-label">Education</p>
-      <h2>Coursework &amp; Degrees</h2>
-      <p class="section-sub">Read bottom to top, oldest to newest.</p>
+      <h2>Education</h2>
       <div>
         <div class="edu-entry">
           <div class="edu-degree">M.B.A.</div>
@@ -396,9 +338,7 @@
     </section>
 
     <section class="section" id="skills">
-      <p class="section-label">Skills</p>
-      <h2>Tools of the Trade</h2>
-      <p class="section-sub">What's on the bench, sorted by kind.</p>
+      <h2>Skills</h2>
 
       <div class="skill-group">
         <p class="skill-group-label">Technical &amp; Tools</p>
@@ -439,15 +379,12 @@
     </section>
 
     <section class="section" id="projects">
-      <p class="section-label">Projects</p>
-      <h2>Recent Builds</h2>
-      <p class="section-sub">Analytics projects from the MBA coursework.</p>
+      <h2>Projects</h2>
 
       <div class="build-list">
         <div class="build-entry">
           <div class="build-head">
             <h3>Streamlit Dashboard for Customer Retention</h3>
-            <span class="build-tag">REV A</span>
           </div>
           <p>Dashboard for business insights into customer retention and growth, using a case-study dataset segmented by location, products purchased, and buying habits.</p>
           <div class="build-skills"><span>Streamlit</span><span>Python</span><span>Data Analysis</span></div>
@@ -457,7 +394,6 @@
         <div class="build-entry">
           <div class="build-head">
             <h3>Airbnb Price Analysis</h3>
-            <span class="build-tag">REV B</span>
           </div>
           <p>Analysis of Airbnb rental opportunities in New York to identify rental arbitrage. Gradio interface hosted in Google Colab.</p>
           <div class="build-skills"><span>Supervised Learning</span><span>Gradio</span><span>Google Colab</span></div>
@@ -467,7 +403,6 @@
         <div class="build-entry">
           <div class="build-head">
             <h3>Employee Attrition Analysis</h3>
-            <span class="build-tag">REV C</span>
           </div>
           <p>Analysis of employee attrition at IBM using K-Means segmentation across age, career length, and job function. Gradio interface hosted on Hugging Face.</p>
           <div class="build-skills"><span>K-Means Segmentation</span><span>Gradio</span><span>Hugging Face</span></div>
@@ -477,9 +412,7 @@
     </section>
 
     <section class="section" id="contact">
-      <p class="section-label">Contact</p>
-      <h2>Get in Touch</h2>
-      <p class="section-sub">Open to conversations on hardware, analytics, or both.</p>
+      <h2>Contact</h2>
       <div class="contact-block">
         <span class="email-chip">nj3054@gmail.com</span>
         <a class="btn" href="https://github.com/neel-jain/neel-jain/raw/main/resume.pdf">

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neel Jain — Electrical Engineer</title>
+<meta name="description" content="Neel Jain — Electrical Engineer at Lam Research, MBA candidate at Purdue University." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EEF1EC;
+    --paper-line: #C7D2CB;
+    --card: #F6F7F3;
+    --ink: #26312B;
+    --ink-soft: #5B6960;
+    --ink-faint: #8B978E;
+    --rule: #9B3B3F;
+    --brass: #8A6A33;
+    --brass-deep: #6F5527;
+    --teal: #3F6E63;
+    --radius: 2px;
+    --maxw: 760px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background:
+      repeating-linear-gradient(to bottom, transparent, transparent 27px, var(--paper-line) 27px, var(--paper-line) 28px),
+      repeating-linear-gradient(to right, transparent, transparent 27px, rgba(199,210,203,0.5) 27px, rgba(199,210,203,0.5) 28px),
+      var(--paper);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+  ::selection{ background: var(--brass); color: var(--paper); }
+  :focus-visible{ outline: 2px solid var(--brass-deep); outline-offset: 3px; }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  .mono{ font-family: 'IBM Plex Mono', monospace; }
+
+  .page{
+    max-width: 920px;
+    margin: 40px auto;
+    background: var(--card);
+    border: 1px solid var(--paper-line);
+    box-shadow: 0 1px 0 rgba(38,49,43,0.04), 0 12px 34px rgba(38,49,43,0.06);
+    position: relative;
+  }
+
+  /* margin rule, like a composition notebook page */
+  .margin-rule{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 68px;
+    width: 1px;
+    background: var(--rule);
+    opacity: 0.45;
+  }
+  @media (max-width: 620px){ .margin-rule{ left: 30px; } }
+
+  .stamp{
+    position: absolute;
+    top: 34px;
+    right: 34px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    padding: 5px 9px;
+    transform: rotate(3deg);
+    border-radius: var(--radius);
+    opacity: 0.85;
+  }
+  @media (max-width: 620px){ .stamp{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 64px 88px 44px 96px;
+    border-bottom: 1px solid var(--paper-line);
+  }
+  @media (max-width: 620px){ .hero{ padding: 56px 26px 36px 56px; } }
+
+  .kicker{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    margin: 0 0 22px 0;
+  }
+
+  h1.name{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    line-height: 1.15;
+    margin: 0 0 12px 0;
+    color: var(--ink);
+  }
+
+  .role-line{
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    margin: 0 0 24px 0;
+  }
+  .role-line b{ color: var(--ink); font-weight: 600; }
+  .role-line .sep{ color: var(--ink-faint); margin: 0 8px; }
+
+  .bio{
+    max-width: 56ch;
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0 0 30px 0;
+  }
+
+  .contact-row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+  }
+
+  .email-chip{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--paper-line);
+    padding: 8px 13px;
+    border-radius: var(--radius);
+    user-select: all;
+  }
+
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--brass);
+    color: var(--brass-deep);
+    background: transparent;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn:hover{ background: var(--brass); color: var(--card); }
+  .btn.ghost{ border-color: var(--paper-line); color: var(--ink-soft); }
+  .btn.ghost:hover{ background: var(--paper); color: var(--ink); border-color: var(--paper-line); }
+  .btn svg{ width: 11px; height: 11px; }
+
+  /* ---------- SECTIONS ---------- */
+  main.body-sections{ padding: 4px 0; }
+
+  .section{
+    padding: 42px 88px 42px 96px;
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .section:last-child{ border-bottom: none; }
+  @media (max-width: 620px){ .section{ padding: 34px 26px 34px 56px; } }
+
+  .section-label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 8px 0;
+  }
+
+  .section h2{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 6px 0;
+    color: var(--ink);
+  }
+  .section-sub{
+    font-style: italic;
+    color: var(--ink-faint);
+    font-size: 14px;
+    margin: 0 0 26px 0;
+    font-family: 'Merriweather', serif;
+  }
+
+  .profile-text{
+    color: var(--ink-soft);
+    max-width: 58ch;
+    font-size: 15px;
+  }
+  .profile-text strong{ color: var(--ink); font-weight: 600; }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-entry{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px 20px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-top: 1px dashed var(--paper-line);
+  }
+  .edu-entry:first-child{ border-top: none; padding-top: 0; }
+  .edu-degree{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 15.5px;
+    color: var(--ink);
+  }
+  .edu-inst{
+    grid-column: 1;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .edu-year{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--brass-deep);
+    white-space: nowrap;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skill-group{ margin-bottom: 24px; }
+  .skill-group:last-child{ margin-bottom: 0; }
+  .skill-group-label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 11px 0;
+  }
+  .chip-row{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    padding: 5px 11px;
+    border-radius: var(--radius);
+    border: 1px solid var(--paper-line);
+    color: var(--ink-soft);
+    background: var(--paper);
+  }
+  .chip.brass{ border-color: rgba(138,106,51,0.4); color: var(--brass-deep); }
+  .chip.teal{ border-color: rgba(63,110,99,0.4); color: var(--teal); }
+
+  /* ---------- PROJECTS ---------- */
+  .build-list{ display: flex; flex-direction: column; gap: 0; }
+  .build-entry{
+    padding: 20px 0;
+    border-top: 1px dashed var(--paper-line);
+  }
+  .build-entry:first-child{ border-top: none; padding-top: 0; }
+  .build-head{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 7px;
+  }
+  .build-head h3{
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem;
+    margin: 0;
+    color: var(--ink);
+  }
+  .build-tag{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    padding: 2px 7px;
+    border-radius: var(--radius);
+  }
+  .build-entry p{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 12px 0;
+    max-width: 62ch;
+  }
+  .build-skills{ display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .build-skills span{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    background: var(--paper);
+    border: 1px solid var(--paper-line);
+    padding: 3px 8px;
+    border-radius: var(--radius);
+  }
+  .build-link{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--brass-deep);
+    text-decoration: none;
+  }
+  .build-link:hover{ text-decoration: underline; }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact-block{ display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; }
+
+  footer{
+    padding: 30px 88px 44px 96px;
+    color: var(--ink-faint);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+  }
+  @media (max-width: 620px){ footer{ padding: 26px 26px 40px 56px; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="margin-rule"></div>
+  <div class="stamp">REV A · 2026</div>
+
+  <header class="hero">
+    <p class="kicker">FIELD NOTES — ELECTRICAL ENGINEERING &amp; ANALYTICS</p>
+    <h1 class="name">Neel Jain</h1>
+    <p class="role-line">
+      <b>Electrical Engineer</b>, Lam Research
+      <span class="sep">·</span>
+      <b>MBA Candidate</b>, Purdue University
+    </p>
+    <p class="bio">
+      Electrical engineer with five years designing PCB assemblies, cable harnesses, and test instrumentation
+      for semiconductor capital equipment and avionics systems — from schematic capture through bring-up and test.
+      Currently pursuing an MBA to pair that hardware depth with business and analytics fluency.
+    </p>
+    <div class="contact-row">
+      <span class="email-chip">nj3054@gmail.com</span>
+      <a class="btn" href="https://github.com/neel-jain/neel-jain/raw/main/resume.pdf">
+        Resume
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 7l4 4 4-4M6 1v9"/></svg>
+      </a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/neel-jain-18590a184/">
+        LinkedIn
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9L9 3M4 3h5v5"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="body-sections">
+
+    <section class="section" id="profile">
+      <p class="section-label">Profile</p>
+      <h2>What I do</h2>
+      <p class="section-sub">Circuits to cables, and everything in between.</p>
+      <p class="profile-text">
+        I'm skilled in <strong>full-system electrical design and validation</strong> — schematic capture,
+        board layout, cable harness design, and hands-on test instrumentation for equipment that has to
+        work the first time. I'm passionate about every layer of electronic design, and I'm now building
+        the business and analytics side to match, with an MBA expected <strong>May 2028</strong>.
+      </p>
+    </section>
+
+    <section class="section" id="education">
+      <p class="section-label">Education</p>
+      <h2>Coursework &amp; Degrees</h2>
+      <p class="section-sub">Read bottom to top, oldest to newest.</p>
+      <div>
+        <div class="edu-entry">
+          <div class="edu-degree">M.B.A.</div>
+          <div class="edu-year">May 2028</div>
+          <div class="edu-inst">Purdue University</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-degree">M.Eng. Electrical Engineering</div>
+          <div class="edu-year">May 2022</div>
+          <div class="edu-inst">University of Louisville</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-degree">B.S. Electrical Engineering</div>
+          <div class="edu-year">May 2021</div>
+          <div class="edu-inst">University of Louisville</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <p class="section-label">Skills</p>
+      <h2>Tools of the Trade</h2>
+      <p class="section-sub">What's on the bench, sorted by kind.</p>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Technical &amp; Tools</p>
+        <div class="chip-row">
+          <span class="chip">PCBA Design</span>
+          <span class="chip">Cable Harness Design</span>
+          <span class="chip">Test Instrumentation</span>
+          <span class="chip">Altium Designer</span>
+          <span class="chip">Cadence Allegro</span>
+          <span class="chip">Sigrity</span>
+          <span class="chip">Zuken E3</span>
+          <span class="chip">LabVIEW</span>
+          <span class="chip">MATLAB</span>
+          <span class="chip">Python</span>
+          <span class="chip">C</span>
+          <span class="chip">C++</span>
+          <span class="chip">HTML</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Building Proficiencies</p>
+        <div class="chip-row">
+          <span class="chip teal">Signal Integrity</span>
+          <span class="chip teal">EMI/EMC</span>
+          <span class="chip teal">PCB Design</span>
+          <span class="chip teal">Plasma Physics</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Current Coursework</p>
+        <div class="chip-row">
+          <span class="chip brass">AI Analytics for Business</span>
+          <span class="chip brass">Tech-Focused Business</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <p class="section-label">Projects</p>
+      <h2>Recent Builds</h2>
+      <p class="section-sub">Analytics projects from the MBA coursework.</p>
+
+      <div class="build-list">
+        <div class="build-entry">
+          <div class="build-head">
+            <h3>Streamlit Dashboard for Customer Retention</h3>
+            <span class="build-tag">REV A</span>
+          </div>
+          <p>Dashboard for business insights into customer retention and growth, using a case-study dataset segmented by location, products purchased, and buying habits.</p>
+          <div class="build-skills"><span>Streamlit</span><span>Python</span><span>Data Analysis</span></div>
+          <a class="build-link" href="https://github.com/neel-jain/MGMT-59000-customer-retention-dashboard">View repository →</a>
+        </div>
+
+        <div class="build-entry">
+          <div class="build-head">
+            <h3>Airbnb Price Analysis</h3>
+            <span class="build-tag">REV B</span>
+          </div>
+          <p>Analysis of Airbnb rental opportunities in New York to identify rental arbitrage. Gradio interface hosted in Google Colab.</p>
+          <div class="build-skills"><span>Supervised Learning</span><span>Gradio</span><span>Google Colab</span></div>
+          <a class="build-link" href="https://github.com/neel-jain/MGMT-59000-Airbnb-Price-Analysis">View repository →</a>
+        </div>
+
+        <div class="build-entry">
+          <div class="build-head">
+            <h3>Employee Attrition Analysis</h3>
+            <span class="build-tag">REV C</span>
+          </div>
+          <p>Analysis of employee attrition at IBM using K-Means segmentation across age, career length, and job function. Gradio interface hosted on Hugging Face.</p>
+          <div class="build-skills"><span>K-Means Segmentation</span><span>Gradio</span><span>Hugging Face</span></div>
+          <a class="build-link" href="https://github.com/neel-jain/MGMT-59000-Employee-Attrition-Analysis">View repository →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <p class="section-label">Contact</p>
+      <h2>Get in Touch</h2>
+      <p class="section-sub">Open to conversations on hardware, analytics, or both.</p>
+      <div class="contact-block">
+        <span class="email-chip">nj3054@gmail.com</span>
+        <a class="btn" href="https://github.com/neel-jain/neel-jain/raw/main/resume.pdf">
+          Resume
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 7l4 4 4-4M6 1v9"/></svg>
+        </a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/neel-jain-18590a184/">
+          LinkedIn
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9L9 3M4 3h5v5"/></svg>
+        </a>
+        <a class="btn ghost" href="https://github.com/neel-jain">
+          GitHub
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9L9 3M4 3h5v5"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Neel Jain — Notebook last updated, revision A.</footer>
+</div>
+
+</body>
+</html>
